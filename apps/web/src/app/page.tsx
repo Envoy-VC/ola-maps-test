@@ -1,10 +1,17 @@
-import { Button } from '@repo/ui/components/button';
+'use client';
+
+import dynamic from 'next/dynamic';
+
+const CollegeMap = dynamic(
+  () => import('../components/college-map').then((m) => m.CollegeMap),
+  { ssr: false }
+);
 
 const Home = () => {
   return (
-    <div>
-      <Button variant='default'>Hello World</Button>
-    </div>
+    <>
+      <CollegeMap />
+    </>
   );
 };
 
